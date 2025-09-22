@@ -4,35 +4,44 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Muhammad Sonhajji — Portfolio</title>
-
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Tailwind CDN  -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Tailwind config (optional small tweaks) -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                600: "#0ea5a4",
-                700: "#0b9b98",
-              },
-            },
-          },
-        },
-      };
-    </script>
-
     <style>
+      /* Custom CSS for centering the 5th item when there are exactly 5 items */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+      }
+
+      .projects-grid article:nth-child(5):last-child {
+        grid-column: 2 / 4; /* Spans from column 2 to column 4 (centered) */
+        max-width: 300px; /* Limit width so it doesn't stretch too much */
+        justify-self: center; /* Center within the spanned area */
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 1023px) {
+        .projects-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .projects-grid article:nth-child(5):last-child {
+          grid-column: 1 / 3; /* Span both columns on medium screens */
+          max-width: 300px;
+        }
+      }
+
+      @media (max-width: 639px) {
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .projects-grid article:nth-child(5):last-child {
+          grid-column: 1; /* Single column on small screens */
+          max-width: none;
+        }
+      }
+
       body {
         font-family: "Epunda Slab", sans-serif;
       }
@@ -68,36 +77,6 @@
               >Contact</a
             >
           </nav>
-
-          <div class="md:hidden">
-            <button id="nav-toggle" class="p-2 rounded bg-gray-100">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-gray-700"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden pb-4">
-          <nav class="flex flex-col gap-3 text-sm">
-            <a href="#home" class="text-gray-700">Home</a>
-            <a href="#about" class="text-gray-700">About</a>
-            <a href="#projects" class="text-gray-700">Projects</a>
-            <a href="#tech" class="text-gray-700">Tech Stack</a>
-            <a href="#contact" class="text-gray-700">Contact</a>
-          </nav>
         </div>
       </div>
     </header>
@@ -108,7 +87,7 @@
         <div
           class="max-w-6xl mx-auto px-6 py-8 lg:py-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
         >
-          <div class="space-y-6" data-animate>
+          <div class="space-y-6">
             <p class="font-medium bg-indigo-500 text-white inline-block px-2">
               Fullstack Web Developer
             </p>
@@ -137,8 +116,7 @@
             </div>
           </div>
 
-          <div class="w-full rounded-lg overflow-hidden shadow-lg" data-animate>
-            <!-- placeholder unsplash, replace with your asset -->
+          <div class="w-full rounded-lg overflow-hidden shadow-lg">
             <img
               src="asset/img/sonhajji.jpg"
               alt="hero"
@@ -161,31 +139,13 @@
               <span class="font-semibold">Universitas Bina Insani</span>,
               majoring in
               <span class="font-semibold">Informatics Engineering</span>, with a
-              strong interest in technology and web development. I have a solid
-              foundation in
-              <span class="font-semibold">HTML, CSS, JavaScript, PHP,</span> and
-              <span class="font-semibold">MySQL</span> to build websites that
-              are
-              <span class="text-brand-600 font-medium"
-                >interactive, responsive,</span
-              >
-              and <span class="text-brand-600 font-medium">user-friendly</span>.
-              I am also recognized as a fast learner, highly adaptable, and
-              enthusiastic about facing new challenges in the IT field.
+              strong interest in technology and web development.
             </p>
-
             <p>
               In addition, I have experience working with the
               <span class="font-semibold">Laravel</span> framework as well as
-              supporting libraries such as
-              <span class="font-semibold"
-                >Livewire, Filament, Laravel Jetstream, Tailwind CSS,</span
-              >
-              and <span class="font-semibold">Bootstrap</span> to build
-              efficient, scalable, and modern web applications. With a
-              combination of technical skills and strong learning enthusiasm, I
-              am confident in my ability to make a meaningful contribution to
-              any company or team I join.
+              supporting libraries to build efficient, scalable, and modern web
+              applications.
             </p>
           </div>
         </div>
@@ -194,18 +154,15 @@
       <!-- PROJECTS (dedicated) -->
       <section id="projects" class="bg-white">
         <div class="max-w-6xl mx-auto px-6 py-16">
-          <div class="text-center mb-10" data-animate>
+          <div class="text-center mb-10">
             <h2 class="text-3xl font-bold">Projects</h2>
             <p class="text-gray-600 mt-2">
               Some selected project — video demo + repo link
             </p>
           </div>
 
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-            data-animate
-          >
-            <!-- reuse same card structure but with more visual emphasis -->
+          <div class="projects-grid">
+            <!-- Blog Project -->
             <article
               class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden flex flex-col"
             >
@@ -239,6 +196,7 @@
               </div>
             </article>
 
+            <!-- E-Commerce Project -->
             <article
               class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden flex flex-col"
             >
@@ -272,6 +230,7 @@
               </div>
             </article>
 
+            <!-- Rent Equipment Project -->
             <article
               class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden flex flex-col"
             >
@@ -306,6 +265,7 @@
               </div>
             </article>
 
+            <!-- Melawai Hotel Project -->
             <article
               class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden flex flex-col"
             >
@@ -339,13 +299,14 @@
               </div>
             </article>
 
+            <!-- REST API Project (This will be centered) -->
             <article
               class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden flex flex-col"
             >
               <img
                 src="asset/img/rest-api.jpeg"
                 class="w-full h-40 object-cover"
-                alt="melawai-hotel.jpg"
+                alt="rest-api.jpg"
               />
               <div class="p-4 flex-1 flex flex-col justify-between">
                 <div>
@@ -377,15 +338,13 @@
       <!-- TECH STACK -->
       <section id="tech" class="bg-gray-50">
         <div class="max-w-6xl mx-auto px-6 py-16">
-          <div class="text-center mb-8" data-animate>
+          <div class="text-center mb-8">
             <h2 class="text-2xl font-bold">Tech Stack</h2>
           </div>
 
           <div
             class="grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-8 gap-6 items-center"
-            data-animate
           >
-            <!-- Replace src with your prepared assets under /asset/img/logo/ -->
             <div
               class="flex items-center justify-center p-3 bg-white rounded shadow-sm"
             >
@@ -464,7 +423,7 @@
 
       <!-- CONTACT -->
       <section id="contact" class="bg-white">
-        <div class="max-w-3xl mx-auto px-6 py-16" data-animate>
+        <div class="max-w-3xl mx-auto px-6 py-16">
           <h2 class="text-3xl font-bold text-center">Reach me at</h2>
 
           <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -485,24 +444,9 @@
               target="_blank"
               class="inline-flex items-center px-3 py-3 rounded-full bg-teal-600 text-white shadow hover:bg-teal-700"
             >
-              <svg
-                class="w-6 h-6 text-gray-800 dark:text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
                   d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
-                  clip-rule="evenodd"
-                />
-                <path
-                  fill="currentColor"
-                  d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z"
                 />
               </svg>
             </a>
@@ -534,48 +478,8 @@
       </footer>
     </main>
 
-    <!-- SCRIPTS -->
     <script>
-      // mobile nav
-      const navToggle = document.getElementById("nav-toggle");
-      const mobileMenu = document.getElementById("mobile-menu");
-      navToggle?.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-
-      // set year
       document.getElementById("year").textContent = new Date().getFullYear();
-
-      // IntersectionObserver for fade-in effects (uses tailwind utility classes only)
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("opacity-100", "translate-y-0");
-              entry.target.classList.remove("opacity-0", "translate-y-6");
-              io.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
-
-      // initial elements to observe
-      document.querySelectorAll("[data-animate]").forEach((el) => {
-        // start hidden with transform
-        el.classList.add(
-          "opacity-0",
-          "translate-y-6",
-          "transition-all",
-          "duration-700",
-          "ease-out"
-        );
-        io.observe(el);
-      });
-
-      // Smooth scroll offsets for fixed header (if needed)
-      // (Optional) If you want to offset anchor scroll because header is sticky, you'd need small JS.
-      // For now we rely on 'scroll-smooth' on <html>.
     </script>
   </body>
 </html>
