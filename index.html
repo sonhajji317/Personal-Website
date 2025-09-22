@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Muhammad Sonhajji — Portfolio</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind config (optional small tweaks) -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                600: "#0ea5a4",
+                700: "#0b9b98",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        font-family: "Epunda Slab", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="antialiased text-gray-800 bg-gray-50">
+    <!-- NAV -->
+    <header class="backdrop-blur bg-white/60 sticky top-0 z-40 border-b">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center justify-between h-16">
+          <a href="#home" class="flex items-center gap-3">
+            <div class="h-10 w-10 rounded-full overflow-hidden">
+              <img
+                src="/asset/img/sonhajji.jpg"
+                alt="logo"
+                class="object-cover w-full h-full"
+              />
+            </div>
+            <span class="font-semibold text-md">Muhammad Sonhajji</span>
+          </a>
+
+          <nav class="hidden md:flex items-center gap-6">
+            <a href="#home" class="text-gray-600 hover:text-gray-900">Home</a>
+            <a href="#about" class="text-gray-600 hover:text-gray-900">About</a>
+            <a href="#projects" class="text-gray-600 hover:text-gray-900"
+              >Projects</a
+            >
+            <a href="#tech" class="text-gray-600 hover:text-gray-900"
+              >Tech Stack</a
+            >
+            <a href="#contact" class="text-gray-600 hover:text-gray-900"
+              >Contact</a
+            >
+          </nav>
+
+          <div class="md:hidden">
+            <button id="nav-toggle" class="p-2 rounded bg-gray-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-gray-700"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+          <nav class="flex flex-col gap-3 text-sm">
+            <a href="#home" class="text-gray-700">Home</a>
+            <a href="#about" class="text-gray-700">About</a>
+            <a href="#projects" class="text-gray-700">Projects</a>
+            <a href="#tech" class="text-gray-700">Tech Stack</a>
+            <a href="#contact" class="text-gray-700">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main id="home">
+      <section id="hero" class="bg-white">
+        <div
+          class="max-w-6xl mx-auto px-6 py-8 lg:py-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
+        >
+          <div class="space-y-6" data-animate>
+            <p class="font-medium bg-indigo-500 text-white inline-block px-2">
+              Fullstack Web Developer
+            </p>
+            <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+              Hi, I'm <span class="text-indigo-600">Muhammad Sonhajji</span>
+            </h1>
+            <p class="text-gray-600 max-w-xl">
+              I build modern and maintainable web applications using Laravel,
+              Livewire, Filament and Tailwind CSS.
+            </p>
+
+            <div class="flex items-center gap-4">
+              <a
+                href="#projects"
+                class="inline-flex items-center px-5 py-3 rounded bg-indigo-600 text-white font-medium shadow hover:bg-indigo-700"
+              >
+                See Projects
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                class="inline-flex items-center px-5 py-3 rounded border border-gray-200 text-gray-700 hover:bg-gray-200"
+              >
+                Get CV
+              </a>
+            </div>
+          </div>
+
+          <div class="w-full rounded-lg overflow-hidden shadow-lg" data-animate>
+            <!-- placeholder unsplash, replace with your asset -->
+            <img
+              src="asset/img/sonhajji.jpg"
+              alt="hero"
+              class="w-full h-96 object-cover sm:h-[28rem] lg:h-[32rem]"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="bg-gray-50 py-16">
+        <div class="max-w-5xl mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+            Introduce Myself
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8 text-gray-700 leading-relaxed">
+            <p>
+              I am a graduate of
+              <span class="font-semibold">Universitas Bina Insani</span>,
+              majoring in
+              <span class="font-semibold">Informatics Engineering</span>, with a
+              strong interest in technology and web development. I have a solid
+              foundation in
+              <span class="font-semibold">HTML, CSS, JavaScript, PHP,</span> and
+              <span class="font-semibold">MySQL</span> to build websites that
+              are
+              <span class="text-brand-600 font-medium"
+                >interactive, responsive,</span
+              >
+              and <span class="text-brand-600 font-medium">user-friendly</span>.
+              I am also recognized as a fast learner, highly adaptable, and
+              enthusiastic about facing new challenges in the IT field.
+            </p>
+
+            <p>
+              In addition, I have experience working with the
+              <span class="font-semibold">Laravel</span> framework as well as
+              supporting libraries such as
+              <span class="font-semibold"
+                >Livewire, Filament, Laravel Jetstream, Tailwind CSS,</span
+              >
+              and <span class="font-semibold">Bootstrap</span> to build
+              efficient, scalable, and modern web applications. With a
+              combination of technical skills and strong learning enthusiasm, I
+              am confident in my ability to make a meaningful contribution to
+              any company or team I join.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS (dedicated) -->
+      <section id="projects" class="bg-white">
+        <div class="max-w-6xl mx-auto px-6 py-16">
+          <div class="text-center mb-10" data-animate>
+            <h2 class="text-3xl font-bold">Projects</h2>
+            <p class="text-gray-600 mt-2">
+              Some selected project — video demo + repo link
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            data-animate
+          >
+            <!-- reuse same card structure but with more visual emphasis -->
+            <article
+              class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden flex flex-col"
+            >
+              <img
+                src="asset/img/blog.jpeg"
+                class="w-full h-40 object-cover"
+                alt="blog.jpg"
+              />
+              <div class="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-semibold">Blog</h3>
+                  <p class="text-sm text-gray-600 mt-2">
+                    A mini blog app built with Laravel 12, Laravel Filament and
+                    MySQL.
+                  </p>
+                </div>
+                <div class="mt-4 flex gap-3 justify-center">
+                  <a
+                    href="https://drive.google.com/file/d/1r2_R1fP82jilwrPdYP5-8exM6Y4SQqt9/view?usp=sharing"
+                    target="_blank"
+                    class="px-4 py-2 rounded bg-indigo-600 text-white text-sm hover:bg-indigo-700"
+                    >Watch Demo</a
+                  >
+                  <a
+                    href="https://github.com/sonhajji317/Blog"
+                    target="_blank"
+                    class="px-4 py-2 rounded border border-gray-200 text-sm hover:bg-gray-200"
+                    >View Repo</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden flex flex-col"
+            >
+              <img
+                src="asset/img/ecommerce.jpeg"
+                class="w-full h-40 object-cover"
+                alt="ecommerce.jpg"
+              />
+              <div class="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-semibold">E-Commerce</h3>
+                  <p class="text-sm text-gray-600 mt-2">
+                    A mini e-commerce built with Laravel 12, Laravel Jetstream,
+                    Tailwind CSS, and Midtrans as the payment gateway.
+                  </p>
+                </div>
+                <div class="mt-4 flex gap-3 justify-center">
+                  <a
+                    href="https://drive.google.com/file/d/13DRB0Nc86Lt_wBWjY1zd3ijIJwjtJWSi/view?usp=sharing"
+                    target="_blank"
+                    class="px-4 py-2 rounded bg-indigo-600 text-white text-sm hover:bg-indigo-700"
+                    >Watch Demo</a
+                  >
+                  <a
+                    href="https://github.com/sonhajji317/Ecommerce"
+                    target="_blank"
+                    class="px-4 py-2 rounded border border-gray-200 text-sm hover:bg-gray-200"
+                    >View Repo</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden flex flex-col"
+            >
+              <img
+                src="asset/img/rent-app.jpeg"
+                class="w-full h-40 object-cover"
+                alt="rent-app.jpg"
+              />
+              <div class="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-semibold">Rent Camp Equipment</h3>
+                  <p class="text-sm text-gray-600 mt-2">
+                    A rental app for outdoor equipment, built with Laravel 12,
+                    Laravel Jetstream, Laravel Livewire, Tailwind CSS, and
+                    Midtrans as the payment gateway.
+                  </p>
+                </div>
+                <div class="mt-4 flex gap-3 justify-center">
+                  <a
+                    href="https://drive.google.com/file/d/1zv0-gzvL1Geq3-IlysaxUwtUFVuGjA3t/view?usp=sharing"
+                    target="_blank"
+                    class="px-4 py-2 rounded bg-indigo-600 text-white text-sm hover:bg-indigo-700"
+                    >Watch Demo</a
+                  >
+                  <a
+                    href="https://github.com/sonhajji317/Rental-Equipment-for-Hiking-Camping"
+                    target="_blank"
+                    class="px-4 py-2 rounded border border-gray-200 text-sm hover:bg-gray-200"
+                    >View Repo</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden flex flex-col"
+            >
+              <img
+                src="asset/img/melawai-hotel.jpeg"
+                class="w-full h-40 object-cover"
+                alt="melawai-hotel.jpg"
+              />
+              <div class="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-semibold">Melawai Hotel</h3>
+                  <p class="text-sm text-gray-600 mt-2">
+                    A hotel booking app built with Laravel 12, Laravel Livewire,
+                    Tailwind CSS, and Midtrans as the payment gateway.
+                  </p>
+                </div>
+                <div class="mt-4 flex gap-3 justify-center">
+                  <a
+                    href="https://drive.google.com/file/d/1O5BWiDIBOU8uDWVn7RBIzYOuKCj2NNPh/view?usp=sharing"
+                    target="_blank"
+                    class="px-4 py-2 rounded bg-indigo-600 text-white text-sm hover:bg-indigo-700"
+                    >Watch Demo</a
+                  >
+                  <a
+                    href="https://github.com/sonhajji317/Hotel-Booking"
+                    target="_blank"
+                    class="px-4 py-2 rounded border border-gray-200 text-sm hover:bg-gray-200"
+                    >View Repo</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- TECH STACK -->
+      <section id="tech" class="bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6 py-16">
+          <div class="text-center mb-8" data-animate>
+            <h2 class="text-2xl font-bold">Tech Stack</h2>
+          </div>
+
+          <div
+            class="grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-8 gap-6 items-center"
+            data-animate
+          >
+            <!-- Replace src with your prepared assets under /asset/img/logo/ -->
+            <div
+              class="flex items-center justify-center p-3 bg-white rounded shadow-sm"
+            >
+              <img
+                src="asset/img/logo/laravel.png"
+                alt="Laravel"
+                class="h-12 object-contain"
+              />
+            </div>
+            <div
+              class="flex items-center justify-center p-3 bg-white rounded shadow-sm"
+            >
+              <img
+                src="asset/img/logo/livewire.png"
+                alt="Livewire"
+                class="h-12 object-contain"
+              />
+            </div>
+            <div
+              class="flex items-center justify-center p-3 bg-white rounded shadow-sm"
+            >
+              <img
+                src="asset/img/logo/filament.jpg"
+                alt="Filament"
+                class="h-12 object-contain"
+              />
+            </div>
+            <div
+              class="flex items-center justify-center p-3 bg-white rounded shadow-sm"
+            >
+              <img
+                src="asset/img/logo/tailwindcss.png"
+                alt="Tailwind"
+                class="h-12 object-contain"
+              />
+            </div>
+            <div
+              class="flex items-center justify-center p-3 bg-white rounded shadow-sm"
+            >
+              <img
+                src="asset/img/logo/html.png"
+                alt="HTML"
+                class="h-12 object-contain"
+              />
+            </div>
+            <div
+              class="flex items-center justify-center p-3 bg-white rounded shadow-sm"
+            >
+              <img
+                src="asset/img/logo/css.png"
+                alt="CSS"
+                class="h-12 object-contain"
+              />
+            </div>
+            <div
+              class="flex items-center justify-center p-3 bg-white rounded shadow-sm"
+            >
+              <img
+                src="asset/img/logo/js.png"
+                alt="JavaScript"
+                class="h-12 object-contain"
+              />
+            </div>
+            <div
+              class="flex items-center justify-center p-3 bg-white rounded shadow-sm"
+            >
+              <img
+                src="asset/img/logo/bootstrap.png"
+                alt="Bootstrap"
+                class="h-12 object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="bg-white">
+        <div class="max-w-3xl mx-auto px-6 py-16" data-animate>
+          <h2 class="text-3xl font-bold text-center">Reach me at</h2>
+
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="bg-gray-50 rounded-lg p-6 text-center">
+              <h4 class="font-semibold">Email</h4>
+              <p class="text-sm text-gray-600 mt-1">sonhajji317@gmail.com</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-6 text-center">
+              <h4 class="font-semibold">GitHub</h4>
+              <p class="text-sm text-gray-600 mt-1">github.com/sonhajji317</p>
+            </div>
+          </div>
+
+          <div class="mt-8 text-center">
+            <h5 class="mb-2">WhatsApp</h5>
+            <a
+              href="https://wa.me/62895616084684"
+              target="_blank"
+              class="inline-flex items-center px-3 py-3 rounded-full bg-teal-600 text-white shadow hover:bg-teal-700"
+            >
+              <svg
+                class="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
+                  clip-rule="evenodd"
+                />
+                <path
+                  fill="currentColor"
+                  d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="bg-indigo-600 text-gray-100 text-md">
+        <div
+          class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <div class="text-sm">
+            &copy; <span id="year"></span> Muhammad Sonhajji. All rights
+            reserved.
+          </div>
+          <div class="flex gap-4">
+            <a
+              href="https://github.com/sonhajji317"
+              target="_blank"
+              class="text-gray-100 text-md hover:text-white"
+              >GitHub</a
+            >
+            <a href="#home" class="text-gray-100 text-md hover:text-white"
+              >Home</a
+            >
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script>
+      // mobile nav
+      const navToggle = document.getElementById("nav-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      navToggle?.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // set year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // IntersectionObserver for fade-in effects (uses tailwind utility classes only)
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("opacity-100", "translate-y-0");
+              entry.target.classList.remove("opacity-0", "translate-y-6");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      // initial elements to observe
+      document.querySelectorAll("[data-animate]").forEach((el) => {
+        // start hidden with transform
+        el.classList.add(
+          "opacity-0",
+          "translate-y-6",
+          "transition-all",
+          "duration-700",
+          "ease-out"
+        );
+        io.observe(el);
+      });
+
+      // Smooth scroll offsets for fixed header (if needed)
+      // (Optional) If you want to offset anchor scroll because header is sticky, you'd need small JS.
+      // For now we rely on 'scroll-smooth' on <html>.
+    </script>
+  </body>
+</html>
